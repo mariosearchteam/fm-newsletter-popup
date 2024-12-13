@@ -157,6 +157,7 @@ article {
 .newsletter__input.error {
   border: 1px solid hsl(4, 100%, 67%);
   background: hsl(4, 100%, 95%);
+  color: hsl(4, 100%, 67%);
 }
 
 .button {

@@ -190,6 +190,7 @@ article {
     &.error {
       border: 1px solid $clr-primary-500;
       background: $clr-primary-100;
+      color: $clr-primary-500;
     }
   }
 }
