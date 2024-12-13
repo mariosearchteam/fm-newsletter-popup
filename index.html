@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script> 
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
@@ -11,15 +12,15 @@
 </head>
 <body>
 <main>
-    <article class="newsletter split" aria-live="polite">
+    <article class="newsletter split " aria-live="polite">
         <div class="newsletter__image">
             <picture>
                 <source srcset="./assets/images/illustration-sign-up-desktop.svg" media="(min-width: 768px)">
                 <img src="./assets/images/illustration-sign-up-mobile.svg" alt="">
             </picture>
         </div>
-        <div class="newsletter__content flow-content">
-            <h2>Stay updated!</h2>
+        <div class="newsletter__content flow-content container">
+            <h2 class="text-preset-1">Stay updated!</h2>
             <p class="newsletter__subtitle">
                 Join 60,000+ product managers receiving monthly updates on:
             </p>
@@ -28,24 +29,31 @@
                 <li>Measuring to ensure updates are a success</li>
                 <li>And much more!</li>
             </ul>
-            <form action="#" class="newsletter__form">
-                <label for="email" class="newsletter__label">Email address</label>
-                <input type="email" id="email" class="newsletter__input" placeholder="email@company.com" required>
-                <button type="submit" class="button">Subscribe to monthly newsletter</button>
+            <form action="#" class="newsletter__form" id="newsletter-form">
+                <form action="" method="get">
+                    <div class="newsletter__email">
+                        <label for="email" class="newsletter__label text-preset-3">Email address</label>
+                        <input type="email" id="email" class="newsletter__input text-preset-2" placeholder="email@company.com" required>
+                    </div>
+                    <button type="submit" class="button text-preset-2" formnovalidate>Subscribe to monthly newsletter</button>
+                </form>
             </form>
         </div>
     </article>
-    <article class="success">
-        <div class="success__content">
-            <img src="./assets/images/icon-success.svg" alt="Checkmark icon" class="success__icon">
-            <h2>Thanks for subscribing!</h2>
-            <p class="success__subtitle">
-                A confirmation email has been sent to <span class="success__email"></span>. Please open it and click the button inside to confirm your subscription.
-            </p>
-            <button class="button">Dismiss message</button>
+    <article class="success hidden" aria-live="polite">
+        <div class="success__content container">
+            <div class="flow-content">
+                <img src="./assets/images/icon-success.svg" alt="Checkmark icon" class="success__icon">
+                <h2 class="text-preset-1">Thanks for subscribing!</h2>
+                <p class="success__subtitle">
+                    A confirmation email has been sent to <span class="success__email">mail@company.com</span>. Please open it and click the button inside to confirm your subscription.
+                </p>
+            </div>
+            <button class="button reset text-preset-2">Dismiss message</button>
         </div>
 
     </article>
 </main>
+<script src="script.js" defer></script>
 </body>
 </html>
